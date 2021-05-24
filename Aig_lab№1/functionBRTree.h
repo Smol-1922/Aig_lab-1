@@ -42,7 +42,9 @@ void RBTree<Key, Value>::left_rotate(Node<Key, Value>* x) {
 	if (y->Lnext != nil) {
 		y->Lnext->parent = x;
 	}
-	y->parent = x->parent;
+	if (y !=nil) {
+		y->parent = x->parent;
+	}
 	if (x->parent == nil) {
 		Root = y;
 	}
@@ -65,7 +67,9 @@ void RBTree<Key, Value>::right_rotate(Node<Key, Value>* x) {
 	if (y->Rnext != nil) {
 		y->Rnext->parent = x;
 	}
-	y->parent = x->parent;
+	if (y != nil) {
+		y->parent = x->parent;
+	}
 	if (x->parent == nil) {
 		Root = y;
 	}
